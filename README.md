@@ -20,6 +20,8 @@
 
 5. [Fine-tuning de BETO para sentimiento en español](#fine-tuning-de-beto-para-sentimiento-en-español)
 
+6. [Ajuste supervisado de Qwen2.5-0.5B con instrucciones en español](#ajuste-supervisado-de-qwen25-05b-con-instrucciones-en-español)
+
 ---
 
 ## 📂 Contenido
@@ -63,3 +65,9 @@ Este notebook presenta una introducción detallada al **perceptrón multicapa (M
 [![Ver Notebook](https://img.shields.io/badge/📖-View-blue)](https://github.com/gussttaav/ai-notebooks/blob/main/notebooks/fine-tuning-beto-sentiment-analysis.ipynb)
 
 Este notebook realiza **fine-tuning sobre el modelo BETO** (versión en español de BERT) para **clasificación de sentimientos** en reseñas de productos de Amazon. Para ello, carga el modelo preentrenado y su tokenizador, procesa un conjunto de reseñas en español (etiquetadas con 0 para negativas y 1 para positivas), las tokeniza y trunca a 128 posiciones, y luego entrena el modelo durante solo **3 épocas** con una tasa de aprendizaje baja (2e-5) sobre **3000 ejemplos de entrenamiento**. El bucle de entrenamiento se implementa manualmente usando PyTorch. Práctica del curso [Deep Learning para NLP: del Perceptrón al Transformer](gustavoai.dev/cursos/dl-nlp).
+
+#### Ajuste supervisado de Qwen2.5-0.5B con instrucciones en español
+[![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/gussttaav/ai-notebooks/blob/main/notebooks/ajuste-supervisado-qwen.ipynb)
+[![Ver Notebook](https://img.shields.io/badge/📖-View-blue)](https://github.com/gussttaav/ai-notebooks/blob/main/notebooks/ajuste-supervisado-qwen.ipynb)
+
+Este notebook hace el **ajuste supervisado (SFT)** completo de **Qwen2.5-0.5B** en su versión preentrenada, sin ningún ajuste previo para seguir instrucciones. Escribe a mano la plantilla ChatML y la máscara que limita la pérdida a la respuesta, comprueba que los tokens `<|im_start|>` y `<|im_end|>` del modelo preentrenado nunca se entrenaron (y que por eso no sabe terminar una respuesta), y entrena durante **una época** con AdamW y una tasa máxima de 2e-5 sobre unos **3 200 pares** en español de OpenAssistant Conversations. Mide antes y después la pérdida en respuestas reservadas, la probabilidad de cerrar la respuesta y el olvido sobre un texto ajeno. El bucle de entrenamiento se implementa manualmente usando PyTorch, y el modelo y los datos se cargan en un commit fijo. Necesita una GPU (la T4 gratuita de Colab basta). Proyecto del curso [Modelos de Lenguaje: del Transformer al Agente](https://gustavoai.dev/cursos/llm-agents).

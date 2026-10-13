@@ -61,10 +61,10 @@ Este notebook presenta una introducción detallada al **perceptrón multicapa (M
 ### Procesamiento de Lenguaje Natural
 
 #### Fine-tuning de BETO para sentimiento en español
-[![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/gussttaav/ai-notebooks/blob/main/notebooks/fine-tuning-beto-sentiment-analysis.ipynb)
-[![Ver Notebook](https://img.shields.io/badge/📖-View-blue)](https://github.com/gussttaav/ai-notebooks/blob/main/notebooks/fine-tuning-beto-sentiment-analysis.ipynb)
+[![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/gussttaav/ai-notebooks/blob/main/notebooks/fine-tuning-beto.ipynb)
+[![Ver Notebook](https://img.shields.io/badge/📖-View-blue)](https://github.com/gussttaav/ai-notebooks/blob/main/notebooks/fine-tuning-beto.ipynb)
 
-Este notebook realiza **fine-tuning sobre el modelo BETO** (versión en español de BERT) para **clasificación de sentimientos** en reseñas de productos de Amazon. Para ello, carga el modelo preentrenado y su tokenizador, procesa un conjunto de reseñas en español (etiquetadas con 0 para negativas y 1 para positivas), las tokeniza y trunca a 128 posiciones, y luego entrena el modelo durante solo **3 épocas** con una tasa de aprendizaje baja (2e-5) sobre **3000 ejemplos de entrenamiento**. El bucle de entrenamiento se implementa manualmente usando PyTorch. Práctica del curso [Deep Learning para NLP: del Perceptrón al Transformer](gustavoai.dev/cursos/dl-nlp).
+Este notebook realiza **fine-tuning sobre el modelo BETO** (versión en español de BERT) para **clasificación de sentimientos** en reseñas de productos de Amazon. Para ello, carga el modelo preentrenado y su tokenizador, procesa un conjunto de reseñas en español (etiquetadas con 0 para negativas y 1 para positivas), las tokeniza y trunca a 128 posiciones, y luego entrena el modelo durante solo **3 épocas** con una tasa de aprendizaje baja (2e-5) sobre **3000 ejemplos de entrenamiento**. El bucle de entrenamiento se implementa manualmente usando PyTorch. Práctica del curso [Deep Learning para NLP: del Perceptrón al Transformer](https://gustavoai.dev/cursos/dl-nlp).
 
 #### Ajuste supervisado de Qwen2.5-0.5B con instrucciones en español
 [![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/gussttaav/ai-notebooks/blob/main/notebooks/ajuste-supervisado-qwen.ipynb)
